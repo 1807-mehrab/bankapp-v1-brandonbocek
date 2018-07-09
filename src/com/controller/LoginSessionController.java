@@ -19,9 +19,12 @@ public class LoginSessionController {
 	}
 	
 	public void displayOptions(){
+		System.out.println();
 		System.out.println("1. (Amount) to check the amount of money you have.");
 		System.out.println("2. (Transfer) to transfer money to another account.");
 		System.out.println("3 (Audit) to see if you are being audited.");
+		System.out.println("4. (Withdraw) to withdraw some money.");
+		System.out.println("5. (Deposit) to deposit an amount of money.");
 		System.out.println("4. (Quit) to logout of this account.");
 	}
 	
@@ -50,6 +53,12 @@ public class LoginSessionController {
 			System.out.println("How much would you like to deposit?");
 			amount = scan.nextDouble();
 			account.depositMoney(amount);
+			break;
+		case "Audit":
+			if(account.isUnderAudit())
+				System.out.println("You are being audited.");
+			else
+				System.out.println("You are not being audited.");
 			break;
 		case "Quit":
 			isLoggedIn = false;
