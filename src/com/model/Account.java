@@ -39,6 +39,17 @@ public abstract class Account {
 		this.amountOfMoney = amountOfMoney;
 	}
 	
+	public void depositMoney(Double amountToDeposit){
+		this.amountOfMoney += amountToDeposit;
+	}
+	
+	public void withdrawMoney(Double amountToWithdraw){
+		if(amountOfMoney < amountToWithdraw)
+			System.out.println("Insufficient funds for that withdrawal");
+		else
+			this.amountOfMoney -= amountToWithdraw;
+	}
+	
 	public void transferFunds(Account to, Account from, double amountToTransfer) {}
 	
 	

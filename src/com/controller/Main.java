@@ -13,8 +13,11 @@ public class Main {
 		lic.showInitialView();
 		lic.chooseAccountToLoginTo();
 		LoginSessionController lsc = new LoginSessionController(lic.getLoggedIntoAccount(), lic.getAccounts());
-		lsc.displayOptions();
-		lsc.getMenuInput();
+		
+		while(lsc.getIsLoggedIn()){
+			lsc.displayOptions();
+			lsc.getMenuInput();
+		}
 		
 		
 	}
